@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Wine Store Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React client for an online wine shop, featuring a rich user interface, shopping cart, user management, and advanced forms.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Main Features
 
-### `npm start`
+- **Beautiful Home Page** with banner, navigation bar, and quick access buttons.
+- **Product List (Wines)** with search, pagination, stylish product cards, and detailed wine view.
+- **Add to Cart** – Each product can be added to the cart, with smart dialogs for unauthenticated users.
+- **Mini Cart Popup** and **Full Cart Page** – Edit, remove, and clear items.
+- **Checkout Page** – Shipping details form with validation and a running marquee message about cash payment.
+- **User Management** – Registration, login, email verification, and admin user management.
+- **Product Management** – Add, update, and delete wines (admin only).
+- **Modern Design** – Material UI, RTL support, consistent colors, fully responsive.
+- **Redux Toolkit** – Global state management for users, products, and cart.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+│   App.js, App.css, index.js, home.js ...
+│
+├── components/
+│   ├── order/
+│   │   ├── cartPage.js      # Full cart page
+│   │   ├── cartPopup.js     # Mini cart popup
+│   │   ├── orderSlice.js    # Redux slice for cart
+│   │   ├── CheckoutPage.js  # Checkout page
+│   ├── user/
+│   │   ├── login.js, signup.js, allUser.js, userSlice.js ...
+│   ├── wine/
+│       ├── card.js, cardList.js, addWine.js, updateWine.js, productSlice.js ...
+│
+├── images/
+│   ├── Grape field.jpg, Grape.jpg
+│
+└── assets/
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Main Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React 18**
+- **Redux Toolkit**
+- **React Router**
+- **Material UI (MUI)**
+- **Framer Motion** (animations)
+- **Axios** (API calls)
+- **RTL (Right-to-Left)** – Full Hebrew support
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation & Running
 
-### `npm run eject`
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start development server:
+   ```bash
+   npm start
+   ```
+3. Make sure the backend API server is running at `http://localhost:3002`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Main Routes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `/` – Home page
+- `/wines` – Wine list
+- `/wine/:id` – Wine details
+- `/cart` – Full cart page
+- `/checkout` – Checkout page
+- `/login` – Login
+- `/signup` – Signup
+- `/allUsers` – User management (admin)
+- `/addWine` – Add wine (admin)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Contribution
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Feel free to suggest features, bug fixes, and improvements!
+- All pull requests are welcome.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- UI: [Material UI](https://mui.com/)
+- Developed by: Wine Store Team
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy!
