@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Box, Typography, IconButton, Divider, Button, Stack, Paper } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import DeleteIcon from "@mui/icons-material/Delete";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { increaseQuantity, decreaseQuantity, removeFromOrder, clearOrder } from "./orderSlice";
 import { useNavigate } from "react-router-dom";
