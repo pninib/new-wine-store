@@ -6,7 +6,7 @@ export const registerUser = createAsyncThunk(
   "user/registerUser",
   async (form, { rejectWithValue }) => {
     try {
-      const res = await axios.post("http://localhost:3002/api/user/add_user", form);
+      const res = await axios.post("https://wine-store-server.onrender.com/api/user/add_user", form);
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || "שגיאת רשת");
@@ -18,7 +18,7 @@ export const loginUser = createAsyncThunk(
   "user/loginUser",
   async (form, { rejectWithValue }) => {
     try {
-      const res = await axios.post("http://localhost:3002/api/user/login", form);
+      const res = await axios.post("https://wine-store-server.onrender.com/api/user/login", form);
       localStorage.setItem("token", res.data.token);
       return res.data;
     } catch (err) {
@@ -32,7 +32,7 @@ export const verifyEmail = createAsyncThunk(
   "user/verifyEmail",
   async ({ email, code }, { rejectWithValue }) => {
     try {
-      const res = await axios.post("http://localhost:3002/api/user/verify_email", { email, code });
+      const res = await axios.post("https://wine-store-server.onrender.com/api/user/verify_email", { email, code });
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || "קוד שגוי או שגיאת רשת");
@@ -45,7 +45,7 @@ export const fetchAllUsers = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     try {
       const token = getState().user.token;
-      const res = await axios.get("http://localhost:3002/api/user", {
+      const res = await axios.get("https://wine-store-server.onrender.com/api/user", {
         headers: { "x-access-token": token }
       });
       return res.data; // מערך של משתמשים
@@ -61,7 +61,7 @@ export const getCurrentUser = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     try {
       const token = getState().user.token || localStorage.getItem("token");
-      const res = await axios.get("http://localhost:3002/api/user/me", {
+      const res = await axios.get("https://wine-store-server.onrender.com/api/user/me", {
         headers: { "x-access-token": token }
       });
       return res.data; // מחזיר את המשתמש
@@ -77,7 +77,7 @@ export const deleteUser = createAsyncThunk(
   async (userId, { rejectWithValue, getState }) => {
     try {
       const token = getState().user.token;
-      await axios.delete(`http://localhost:3002/api/user/${userId}`, {
+      await axios.delete(`https://wine-store-server.onrender.com/api/user/${userId}`, {
         headers: { "x-access-token": token }
       });
       return userId;

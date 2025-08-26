@@ -8,7 +8,7 @@ export const fetchWines = createAsyncThunk(
         try {
             const params = { page, perPage };
             if (search) params.search = search;
-            const res = await axios.get("http://localhost:3002/api/product", { params });
+            const res = await axios.get("https://wine-store-server.onrender.com/api/product", { params });
             // השרת מחזיר { wines: [...], totalCount: ... }
             return { data: res.data.wines, totalCount: res.data.totalCount, page };
         } catch (err) {
@@ -23,7 +23,7 @@ export const addWine = createAsyncThunk(
     async (wine, { rejectWithValue }) => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.post("http://localhost:3002/api/product/add_wine", wine, {
+            const res = await axios.post("https://wine-store-server.onrender.com/api/product/add_wine", wine, {
                 headers: { "x-access-token": token }
             });
             return res.data;
@@ -39,7 +39,7 @@ export const updateWine = createAsyncThunk(
     async ({ wineid, wine }, { rejectWithValue }) => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.put(`http://localhost:3002/api/product/${wineid}`, wine, {
+            const res = await axios.put(`https://wine-store-server.onrender.com/api/product/${wineid}`, wine, {
                 headers: { "x-access-token": token }
             });
             return res.data;
@@ -55,7 +55,7 @@ export const deleteWine = createAsyncThunk(
     async (wineid, { rejectWithValue }) => {
         try {
             const token = localStorage.getItem("token");
-            await axios.delete(`http://localhost:3002/api/product/${wineid}`, {
+            await axios.delete(`https://wine-store-server.onrender.com/api/product/${wineid}`, {
                 headers: { "x-access-token": token }
             });
             return wineid;

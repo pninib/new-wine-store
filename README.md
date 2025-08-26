@@ -65,7 +65,7 @@ src/
    ```bash
    npm start
    ```
-3. Make sure the backend API server is running at `http://localhost:3002`.
+3. Make sure the backend API server is running at `https://wine-store-server.onrender.com`.
 
 ---
 

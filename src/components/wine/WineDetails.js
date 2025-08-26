@@ -21,7 +21,7 @@ const WineDetails = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get(`http://localhost:3002/api/product/${id}`)
+        axios.get(`https://wine-store-server.onrender.com/api/product/${id}`)
             .then(res => {
                 setWine(res.data);
                 setLoading(false);
