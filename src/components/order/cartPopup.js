@@ -4,7 +4,7 @@ import { Box, Typography, IconButton, Divider, Stack } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { increaseQuantity, decreaseQuantity, removeFromOrder, closeOrder } from "./orderSlice.js";
+import { increaseQuantity, decreaseQuantity, closeOrder } from "./orderSlice.js";
 
 const CartPopup = () => {
   const dispatch = useDispatch();
